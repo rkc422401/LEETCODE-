@@ -13,4 +13,8 @@ class Solution {
 //    7 1 5 3 6 4
 //         5-1=4   
 //             6-3=3
+
+// time complexity :-> o(n)  only taking one loop
+//space complexity :-> 0(1) no extra space 
+
               
