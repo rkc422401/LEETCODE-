@@ -1,1 +1,2 @@
-​
+solved with the help of the algorthims made easy
+in this we have to take two pointers the one will be at the i=2 and the other will be the the in=2 because he first two element will be fixed we have to take care from the next every time we have to compare the i with the in-2 if it is not equal then in that case we have to put the i to in in nums and then we have to move.
