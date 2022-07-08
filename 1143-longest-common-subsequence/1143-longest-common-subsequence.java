@@ -1,27 +1,29 @@
 class Solution {
     public int longestCommonSubsequence(String text1, String text2) {
-        //base condition 
-        int n=text1.length();
-        int m=text2.length();
-        int[][] dp = new int[n + 1][m + 1];
-    for(int i=0;i<n + 1;i++){
-      for(int j=0;j<m + 1;j++){
-        dp[i][j] = -1;
-      }
+        char[] X=text1.toCharArray();
+        char[] Y=text2.toCharArray();
+        int m = X.length;
+        int n = Y.length;
+        return lcs( X, Y, m, n );
+
     }
-        return lcs(text1,text2,n,m,dp);
+    int lcs( char[] X, char[] Y, int m, int n ){
+        int L[][] = new int[m+1][n+1];
+ 
+    /* Following steps build L[m+1][n+1] in bottom up fashion. Note
+        that L[i][j] contains length of LCS of X[0..i-1] and Y[0..j-1] */
+    for (int i=0; i<=m; i++)
+    {
+    for (int j=0; j<=n; j++)
+    {
+        if (i == 0 || j == 0)
+            L[i][j] = 0;
+        else if (X[i-1] == Y[j-1])
+            L[i][j] = L[i-1][j-1] + 1;
+        else
+            L[i][j] = Math.max(L[i-1][j], L[i][j-1]);
     }
-    int lcs(String t1, String t2,int n,int m,int[][] dp){
-        if(n==0 || m==0) return 0;
-        
-        if (dp[n][m] != -1)
-      return dp[n][m];
-        
-        if(t1.charAt(n-1)==t2.charAt(m-1)){
-            return dp[n][m]= 1+lcs(t1,t2,n-1,m-1,dp);
-        }
-        else{
-            return dp[n][m]=Math.max(lcs(t1,t2,n,m-1,dp),lcs(t1,t2,n-1,m,dp));
-        }
+    }
+return L[m][n];
     }
 }
