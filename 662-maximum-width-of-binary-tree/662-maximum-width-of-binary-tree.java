@@ -33,9 +33,9 @@ class Solution {
             int minval=q.peek().index;
             int first=0,last=0;
             for(int i=0;i<n;i++){
-                int curr=q.peek().index-minval;
-                TreeNode node=q.peek().node;
-                q.poll();
+                Pair rem=q.poll();
+                int curr=rem.index-minval;
+                TreeNode node=rem.node;
                 if(i==0) first=curr;
                 if(i==n-1) last=curr;
                 if(node.left !=null){
