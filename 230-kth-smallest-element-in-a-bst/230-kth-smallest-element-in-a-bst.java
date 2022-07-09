@@ -14,30 +14,21 @@
  * }
  */
 class Solution {
-    static int kth=0;
-    static int ksmall=0;
+    static int ki=0;
+    static int ks=0;
     public int kthSmallest(TreeNode root, int k) {
-        kth=0;
-        ksmall=0;
-        inorder(root,k);
-        return ksmall;
+        ks=0;
+        ki=0;
+        in(root,k);
+        return ks;
     }
-     static void inorder(TreeNode node,int k)
-    {
-        if(node == null)
-        {
-            return ;
+    void in(TreeNode node,int k){
+        if(node==null) return;
+        in(node.left,k);
+        ki++;
+        if(k==ki){
+            ks=node.val;
         }
-        
-        inorder(node.left , k);
-        
-        kth++;
-        if(kth==k)
-        {
-            ksmall=node.val;
-            //return;
-        }
-        
-        inorder(node.right,k);
+        in(node.right,k);
     }
 }
