@@ -28,6 +28,7 @@ class Solution {
         ki++;
         if(k==ki){
             ks=node.val;
+            return;
         }
         in(node.right,k);
     }
