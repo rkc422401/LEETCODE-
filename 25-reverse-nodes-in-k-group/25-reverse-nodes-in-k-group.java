@@ -10,16 +10,16 @@
  */
 class Solution {
     public ListNode reverseKGroup(ListNode head, int k) {
-        ListNode dummy =new ListNode(-1,head);
-        ListNode prev=dummy;
+        //so in this what we have to do is that we hav eot make a dummy listnode  that will point t the head of the linked list and we hav to make the dprev listnode that will point to the dummy of the node we are taking the dummy node beacuse it is eassy for the 
+        ListNode dummy=new ListNode(-1,head);
         
-        ListNode curr=dummy ,nex=dummy;
+        ListNode prev=dummy , nex=dummy , curr=dummy;
+        
         int count=0;
         while(curr.next !=null){
             curr=curr.next;
             count++;
         }
-        
         while(count >=k){
             curr=prev.next;
             nex=curr.next;
