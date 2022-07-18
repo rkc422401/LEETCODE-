@@ -3,7 +3,7 @@ class Solution {
         int sum = 0;
         for(int x : nums)
             sum += x;
-        if(((sum + target) % 2 == 1) || (target > sum))
+        if(((sum + target) % 2 != 0) || (target > sum))
             return 0;
         
         int n = nums.length;
