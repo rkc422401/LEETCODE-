@@ -18,3 +18,4 @@ class Solution {
         return ans;
     }
 }
+//so the time complexity of this solution will be the o(n) ans the sapce complexity will be the o(1);
