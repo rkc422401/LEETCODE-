@@ -1,16 +1,20 @@
 class Solution {
     public int maxProduct(int[] nums) {
-        //two methord to solve this problem in the time ocmplexity of n2 and the time complexity of n 
-        //n2 
-        int res=nums[0];
+        //now what i say that the ans will be at the start or at the emd of the array 
+        int ans=Integer.MIN_VALUE;
+        int cp=1;
         for(int i=0;i<nums.length;i++){
-            int mul=nums[i];
-            for(int j=i+1;j<nums.length;j++){
-                res=Math.max(res,mul);
-                mul=mul*nums[j];
-            }
-            res=Math.max(res,mul);
+            cp*=nums[i];
+            ans=Math.max(ans,cp);
+            if(cp==0) cp=1;
         }
-        return res;
+        
+        cp=1;
+        for(int i=nums.length-1;i>=0;i--){
+            cp*=nums[i];
+            ans=Math.max(ans,cp);
+            if(cp==0) cp=1;
+        }
+        return ans;
     }
 }
