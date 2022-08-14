@@ -13,7 +13,7 @@ class Solution {
             for(int i=0;i<nums.length;i++){
                 temp.add(nums[i]);
             }
-            ans.add(temp);
+            ans.add(new ArrayList<>(temp));
             return;
         }
         
