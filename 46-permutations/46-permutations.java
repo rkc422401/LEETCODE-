@@ -14,6 +14,7 @@ class Solution {
                 temp.add(nums[i]);
             }
             ans.add(temp);
+            return;
         }
         
         //now visit every index from index 0 to nums.length
