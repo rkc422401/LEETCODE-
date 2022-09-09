@@ -28,7 +28,7 @@ class Solution {
                     str.append(temp);
                     popi--;
                 }
-                k=0;
+                //k=0;
             }
             
         }
