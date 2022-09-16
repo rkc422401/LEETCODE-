@@ -1,23 +1,16 @@
 class Solution {
     public int combinationSum4(int[] nums, int target) {
-        
-        
+        //changing varibles ke dop
         int[] dp=new int[target+1];
-        Arrays.fill(dp,-1);
-        int res=f(nums,target,dp);
-        
-        
-        return res;
-    }
-    int f(int[] nums,int target,int[] dp){
-        if(target==0) return 1;
-        if(dp[target] != -1) return dp[target];
-        int resi=0;
-        for(int i:nums){
-            if(i<=target){
-                resi+=f(nums,target-i,dp);
+        //Arrays.fill(dp,-1);
+        dp[0]=1;
+        for(int i=1;i<=target;i++){
+            for(int n:nums){
+                if(n<=i){
+                    dp[i]+=dp[i-n];
+                }
             }
         }
-        return dp[target]=resi;
+        return dp[target];
     }
 }
