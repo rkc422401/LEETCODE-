@@ -4,13 +4,14 @@ class Solution {
         
         int[] dp=new int[target+1];
         Arrays.fill(dp,-1);
-        return f(nums,target,dp);
-
+        int res=f(nums,target,dp);
+        
+        
+        return res;
     }
     int f(int[] nums,int target,int[] dp){
-        if(dp[target] != -1) return dp[target];
         if(target==0) return 1;
-        
+        if(dp[target] != -1) return dp[target];
         int resi=0;
         for(int i:nums){
             if(i<=target){
